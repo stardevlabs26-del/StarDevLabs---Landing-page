@@ -1,87 +1,1014 @@
-Create a cinematic, high-converting luxury technology advertisement for a company called StarDevLabs that builds and launches custom AI companion platforms for entrepreneurs.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StarDevLabs | Custom AI Platforms. Engineered for Launch.</title>
+  <meta name="description" content="StarDevLabs designs and deploys custom AI companion platforms for founders, creators, and operators who want a premium product ready for launch." />
+  <meta name="theme-color" content="#08080b" />
+  <style>
+    :root {
+      --bg: #08080b;
+      --panel: rgba(16, 16, 24, 0.82);
+      --text: #f5f7fb;
+      --muted: #a9b0c1;
+      --line: rgba(255,255,255,0.08);
+      --blue: #00d4ff;
+      --purple: #7b3fff;
+      --pink: #f054b5;
+      --success: #5eead4;
+      --shadow: 0 24px 80px rgba(0,0,0,0.45);
+      --radius: 24px;
+      --max: 1220px;
+    }
 
-Tone: seductive, premium, futuristic, confident, high-end technology brand.
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(123,63,255,0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(0,212,255,0.16), transparent 24%),
+        linear-gradient(180deg, #060609 0%, #0b0b11 45%, #08080b 100%);
+      line-height: 1.55;
+    }
 
-Opening scene:
-A dark, minimal, luxury environment with soft glowing light. A stunning, confident, attractive woman appears on screen. She has a calm, flirtatious energy, looking directly into the camera with strong eye contact and a subtle smile, creating immediate connection with the viewer.
+    a { color: inherit; text-decoration: none; }
+    img, video { max-width: 100%; display: block; }
 
-Voiceover tone:
-female, smooth, confident, slightly seductive but professional and believable.
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-Voiceover:
-"What if you could launch your own AI platform… without building any of the technology?"
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 8, 11, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
 
-Scene transitions:
-The woman slowly walks forward while the environment subtly transforms around her. She begins to change appearance seamlessly into different personas:
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 16px;
+    }
 
-anime-inspired version
-goth aesthetic
-vampire-inspired
-futuristic AI style
-glamorous high-end model look
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
 
-Each transformation is smooth and visually captivating.
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(0,212,255,0.2), rgba(123,63,255,0.35)),
+        rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 30px rgba(0,212,255,0.08);
+      font-size: 1.1rem;
+    }
 
-As she transforms, sleek, premium UI panels appear around her showing:
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
 
-AI companions chatting
-customisable personalities
-memory and emotional interaction
-immersive audio stories and ASMR
-interactive confessions
-AI image generation
-voice interaction
-subscription dashboards and analytics
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
 
-Voiceover continues:
-"The AI companion market is growing rapidly. And now… you can build your own."
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-Cut to:
-Close-up shots of users engaging with AI companions on phones and laptops, smiling, immersed, emotionally engaged.
+    .btn-primary {
+      color: #081018;
+      background: linear-gradient(135deg, var(--blue), #8be9ff);
+      box-shadow: 0 14px 30px rgba(0,212,255,0.24);
+    }
 
-Voiceover:
-"We design and deploy fully custom AI companion platforms — ready to go live in days."
+    .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.04); }
 
-Show:
-platform dashboards
-branding being applied
-a platform launching instantly
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.1);
+    }
 
-Voiceover:
-"Customisable companions. Memory. Stories. Voice. Engagement systems designed to keep users coming back."
+    .btn-secondary:hover { background: rgba(255,255,255,0.07); }
 
-Visual pacing increases slightly with smooth, premium transitions.
+    .hero {
+      padding: 72px 0 48px;
+    }
 
-On-screen text flashes:
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
 
-"Custom AI Platforms"
-"Fully Customisable"
-"Built For Launch"
-"Your Platform • Your Brand • Your Revenue"
+    .hero-copy,
+    .hero-media,
+    .panel,
+    .card,
+    .price-card,
+    .step,
+    .faq-item,
+    .license-box,
+    .image-card,
+    .cta-banner {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+    }
 
-Final scene:
-The woman returns to her most striking form. She steps closer to the camera, looks directly at the viewer with a confident, slightly playful expression.
+    .hero-copy {
+      padding: 42px;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-She smiles softly and gives a subtle, classy, flirtatious blow of a kiss toward the viewer.
+    .hero-media {
+      min-height: 640px;
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+      grid-template-rows: 1.2fr auto;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(123,63,255,0.18), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(0,212,255,0.16), transparent 28%),
+        rgba(255,255,255,0.02);
+    }
 
-Final text appears on screen:
+    .hero-copy::before,
+    .hero-media::before,
+    .panel::before,
+    .card::before,
+    .price-card::before,
+    .step::before,
+    .faq-item::before,
+    .license-box::before,
+    .image-card::before,
+    .cta-banner::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.18), transparent 28%, transparent 72%, rgba(123,63,255,0.18));
+      z-index: 0;
+      pointer-events: none;
+    }
 
-"StarDevLabs"
+    .hero-copy > *, .hero-media > *, .panel > *, .card > *, .price-card > *, .step > *, .faq-item > *, .license-box > *, .image-card > *, .cta-banner > * {
+      position: relative;
+      z-index: 1;
+    }
 
-"Custom AI Platforms. Engineered for Launch."
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #c5d1ef;
+      margin-bottom: 18px;
+    }
 
-"Launch Your Platform in Days"
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      box-shadow: 0 0 18px rgba(0,212,255,0.7);
+    }
 
-"stardevlabs-ai.com"
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
 
-Music:
-dark cinematic electronic music, slow build, premium and immersive.
+    .gradient-text {
+      background: linear-gradient(135deg, #f8fbff 0%, #9ae9ff 45%, #b58cff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-Style:
-luxury tech
-cinematic
-seductive but professional
-high-end startup advertisement
-dark mode visuals
-clean UI
-smooth transitions
+    .hero-subtitle {
+      font-size: 1.12rem;
+      color: var(--muted);
+      margin: 22px 0 28px;
+      max-width: 720px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .proof-card {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      color: #d8dced;
+      font-size: 0.95rem;
+    }
+
+    .trust-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .video-placeholder {
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      min-height: 400px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)),
+        url('video-poster-placeholder.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: end;
+      position: relative;
+    }
+
+    .video-placeholder::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.65));
+    }
+
+    .play-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 2;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(8,8,12,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 0.88rem;
+    }
+
+    .video-copy {
+      position: relative;
+      z-index: 2;
+      padding: 22px;
+    }
+
+    .video-copy h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    .video-copy p { margin: 0; color: #d2d8e7; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .mini-card {
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 126px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mini-card .label {
+      color: #aeb7ce;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-header {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .section-header p {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 1.18rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.14), rgba(123,63,255,0.2));
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dff8ff;
+      font-weight: 700;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .license-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .license-box {
+      padding: 28px;
+    }
+
+    .license-box h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #dbe2f2;
+    }
+
+    .check span:first-child {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(94,234,212,0.12);
+      border: 1px solid rgba(94,234,212,0.2);
+      color: var(--success);
+      font-size: 0.82rem;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .image-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,63,255,0.15));
+    }
+
+    .image-card .caption {
+      padding: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      padding: 28px;
+    }
+
+    .price-card.featured {
+      border-color: rgba(0,212,255,0.22);
+      transform: translateY(-4px);
+    }
+
+    .price-card .tag {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0,212,255,0.12);
+      color: #a8f2ff;
+      border: 1px solid rgba(0,212,255,0.2);
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+    }
+
+    .price-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    .price-card .price {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin: 10px 0 6px;
+      letter-spacing: -0.03em;
+    }
+
+    .price-card .price small {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .price-card p { color: var(--muted); margin: 0 0 16px; }
+
+    .price-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+      color: #e5e9f4;
+      font-size: 0.96rem;
+    }
+
+    .quote-strip {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,63,255,0.14));
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e7fafe;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.14), rgba(123,63,255,0.18));
+      margin-bottom: 14px;
+      color: #eafaff;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+
+    .faq-item h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .faq-item p { margin: 0; color: var(--muted); }
+
+    .cta-banner {
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, rgba(0,212,255,0.14), rgba(123,63,255,0.16));
+    }
+
+    .cta-banner h2 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .cta-banner p { margin: 0; color: #ebf2ff; max-width: 760px; }
+
+    footer {
+      padding: 36px 0 60px;
+      color: var(--muted);
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .license-layout,
+      .split,
+      .pricing,
+      .process,
+      .grid-4,
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-copy,
+      .hero-media {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+
+      .hero-grid,
+      .license-layout,
+      .split,
+      .pricing,
+      .process,
+      .grid-4,
+      .grid-3,
+      .hero-proof,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="brand-mark">✦</div>
+        <div>
+          <div>StarDevLabs</div>
+          <div style="font-size:0.78rem;color:#a9b0c1;font-weight:500;">Custom AI Platforms. Engineered for Launch.</div>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#platform">Platform</a>
+        <a href="#licensing">Licensing</a>
+        <a href="#results">Why Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="#pricing">View Licensing</a>
+        <a class="btn btn-primary" href="#contact">Book a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> StarDevLabs Limited</div>
+          <h1>
+            <span class="gradient-text">Custom AI Platforms.</span><br />
+            Engineered for Launch.
+          </h1>
+          <p class="hero-subtitle">
+            We design and deploy premium AI companion platforms for founders, operators, and digital brands that want to enter the market with a polished, monetisable product. From front-end experience to licensing, monetisation architecture, and launch readiness, we build platforms that look established from day one.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Start Your Platform</a>
+            <a class="btn btn-secondary" href="#platform">Explore the Platform</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-card">
+              <strong>Fast Deployment</strong>
+              <span>Launch-ready builds with premium UI, monetisation flows, and sales-focused structure.</span>
+            </div>
+            <div class="proof-card">
+              <strong>Licensable Architecture</strong>
+              <span>Structured for operators who want a commercial-grade platform, not a toy prototype.</span>
+            </div>
+            <div class="proof-card">
+              <strong>Conversion-Led Design</strong>
+              <span>Every build is shaped to improve signup, retention, upgrade flow, and perceived value.</span>
+            </div>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-pill">Premium UI / UX</div>
+            <div class="trust-pill">Licensing-Ready Delivery</div>
+            <div class="trust-pill">Launch Support</div>
+            <div class="trust-pill">Monetisation Built In</div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="video-placeholder">
+            <div class="play-badge">VIDEO PLACEHOLDER</div>
+            <div class="video-copy">
+              <h3>Replace with your launch advert</h3>
+              <p>Use your poster image as <code>video-poster-placeholder.jpg</code> in the same folder as this file.</p>
+            </div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="label">Licensing Position</div>
+              <strong>Built for commercial deployment</strong>
+              <span>Ideal for founders wanting a serious AI platform with room to scale, brand, and monetise.</span>
+            </div>
+            <div class="mini-card">
+              <div class="label">Business Potential</div>
+              <strong>Recurring revenue architecture</strong>
+              <span>Credits, subscriptions, content unlocks, retention systems, and premium engagement loops.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="platform">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>What your licensed platform can include</h2>
+            <p>This is not a one-page shell. The offer is positioned as a commercially valuable AI platform build with premium user experience, retention layers, and launch-ready monetisation.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">AI</div>
+            <h3>AI companion experiences</h3>
+            <p>Customisable companion profiles, conversation flows, premium positioning, and a front-end experience built to feel immersive and high value.</p>
+          </div>
+          <div class="card">
+            <div class="icon">M</div>
+            <h3>Memory and continuity</h3>
+            <p>Longer-term interaction design that increases user attachment, repeat visits, and perceived realism across sessions.</p>
+          </div>
+          <div class="card">
+            <div class="icon">S</div>
+            <h3>Stories and audio content</h3>
+            <p>Structured content modules such as stories, voice, premium audio experiences, and gated engagement mechanics.</p>
+          </div>
+          <div class="card">
+            <div class="icon">I</div>
+            <h3>Image generation layers</h3>
+            <p>Visual request flows, premium content presentation, and image-based engagement features designed to deepen session value.</p>
+          </div>
+          <div class="card">
+            <div class="icon">C</div>
+            <h3>Credits, upgrades, monetisation</h3>
+            <p>Subscription UI, paid unlock paths, usage logic, and conversion-focused upgrade journeys for scalable recurring revenue.</p>
+          </div>
+          <div class="card">
+            <div class="icon">D</div>
+            <h3>Dashboards and admin controls</h3>
+            <p>Operational visibility, internal controls, and structured management layers depending on your license scope and build package.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container split">
+        <div class="panel" style="padding:30px;">
+          <div class="section-header" style="margin-bottom:10px;display:block;">
+            <h2>Why buyers choose StarDevLabs</h2>
+            <p>Positioned like an experienced platform builder, not a freelance experiment. The sales message is simple: serious execution, premium design, and real commercial thinking from the start.</p>
+          </div>
+          <div class="checklist">
+            <div class="check"><span>✓</span><span><strong>Market-aware builds:</strong> Designed around current AI engagement behavior, retention loops, and premium content monetisation.</span></div>
+            <div class="check"><span>✓</span><span><strong>Founder-ready positioning:</strong> Ideal for operators wanting to enter the AI companion category with a product that looks credible on launch.</span></div>
+            <div class="check"><span>✓</span><span><strong>Premium perception:</strong> Dark, elegant interface systems that feel expensive, immersive, and built for conversion.</span></div>
+            <div class="check"><span>✓</span><span><strong>Commercial flexibility:</strong> Scope can support single-brand deployment, licensing structure, internal control layers, and launch pathways.</span></div>
+          </div>
+        </div>
+
+        <div class="panel" style="padding:30px;">
+          <div class="quote-strip">
+            <strong style="display:block;margin-bottom:8px;font-size:1.05rem;">Built to look established from day one</strong>
+            <span>Strong product presentation changes buyer psychology. A polished platform closes trust gaps faster, supports higher pricing, and makes the business feel real before the first customer arrives.</span>
+          </div>
+          <div style="height:18px;"></div>
+          <div class="card" style="padding:20px;background:rgba(255,255,255,0.02);">
+            <h3>Potential use cases</h3>
+            <p>Creator-led platforms, premium niche communities, paid AI entertainment products, subscription-first digital brands, engagement-focused member experiences, and commercially branded AI companion businesses.</p>
+          </div>
+          <div style="height:18px;"></div>
+          <div class="card" style="padding:20px;background:rgba(255,255,255,0.02);">
+            <h3>Revenue model opportunities</h3>
+            <p>Monthly subscriptions, credit packs, premium feature unlocks, exclusive content tiers, custom companion unlocks, story packs, and upsell pathways tied to engagement depth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="licensing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Licensing and build information</h2>
+            <p>This section is intentionally written to support a serious sales narrative. Adjust the exact terms later with legal review, but the structure below is designed to help the offer feel commercial, credible, and mature.</p>
+          </div>
+        </div>
+
+        <div class="license-layout">
+          <div class="license-box">
+            <h3>What the license is positioned to cover</h3>
+            <div class="checklist">
+              <div class="check"><span>✓</span><span><strong>Branded deployment rights:</strong> Your business receives a configured platform build deployed under your own brand identity, domain, and customer-facing positioning.</span></div>
+              <div class="check"><span>✓</span><span><strong>Commercial usage scope:</strong> Structured to support customer acquisition, subscriptions, content monetisation, and platform operation within the agreed package scope.</span></div>
+              <div class="check"><span>✓</span><span><strong>Launch assets and setup:</strong> Includes onboarding guidance, environment setup direction, and front-end presentation aligned to launch-readiness.</span></div>
+              <div class="check"><span>✓</span><span><strong>Optional enhancements:</strong> Additional modules, expanded admin controls, custom workflows, or specialist features can be quoted separately.</span></div>
+            </div>
+          </div>
+
+          <div class="license-box">
+            <h3>Suggested commercial framing</h3>
+            <p>StarDevLabs licenses and deploys premium AI platform builds for serious operators who want to move quickly into the market with a polished product. Each deployment is positioned as a commercially usable platform build rather than a disposable template, with licensing scope tailored to the package selected.</p>
+            <div class="checklist">
+              <div class="check"><span>✓</span><span>Built for speed to market</span></div>
+              <div class="check"><span>✓</span><span>Designed to support premium pricing</span></div>
+              <div class="check"><span>✓</span><span>Structured for recurring revenue models</span></div>
+              <div class="check"><span>✓</span><span>Prepared to look credible with investors, partners, and end users</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Showcase placeholders</h2>
+            <p>Put these files in the same folder as <code>index.html</code>.</p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <div class="image-card">
+            <img src="showcase-1.jpg" alt="Showcase placeholder 1" />
+            <div class="caption">Image Placeholder 01 — <code>showcase-1.jpg</code></div>
+          </div>
+          <div class="image-card">
+            <img src="showcase-2.jpg" alt="Showcase placeholder 2" />
+            <div class="caption">Image Placeholder 02 — <code>showcase-2.jpg</code></div>
+          </div>
+          <div class="image-card">
+            <img src="showcase-3.jpg" alt="Showcase placeholder 3" />
+            <div class="caption">Image Placeholder 03 — <code>showcase-3.jpg</code></div>
+          </div>
+          <div class="image-card">
+            <img src="showcase-4.jpg" alt="Showcase placeholder 4" />
+            <div class="caption">Image Placeholder 04 — <code>showcase-4.jpg</code></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Licensing packages</h2>
+            <p>These are intentionally framed as high-value commercial packages. Replace pricing and terms as needed, but the presentation is designed to support premium positioning from the start.</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <div class="tag">Starter License</div>
+            <h3>Launch Package</h3>
+            <div class="price">£3,500 <small>starting from</small></div>
+            <p>For founders wanting a premium entry into the market with a polished build and clear launch direction.</p>
+            <div class="price-list">
+              <div>• Branded front-end deployment</div>
+              <div>• Premium homepage and conversion structure</div>
+              <div>• Core platform setup guidance</div>
+              <div>• Basic monetisation flow positioning</div>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Request Details</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="tag">Most Requested</div>
+            <h3>Growth License</h3>
+            <div class="price">£7,500 <small>starting from</small></div>
+            <p>For operators who want a more commercially complete product with stronger monetisation, polish, and launch presence.</p>
+            <div class="price-list">
+              <div>• Expanded platform scope</div>
+              <div>• Premium UI and conversion design</div>
+              <div>• Licensing-focused commercial structure</div>
+              <div>• Launch strategy and build handover guidance</div>
+            </div>
+            <a class="btn btn-primary" href="#contact">Book a Strategy Call</a>
+          </div>
+
+          <div class="price-card">
+            <div class="tag">Private Build</div>
+            <h3>Enterprise License</h3>
+            <div class="price">Custom <small>quote on scope</small></div>
+            <p>For serious operators requiring deeper configuration, internal controls, custom pathways, or white-labelled deployment preparation.</p>
+            <div class="price-list">
+              <div>• Tailored scope and licensing structure</div>
+              <div>• Higher customisation depth</div>
+              <div>• Advanced operational pathways</div>
+              <div>• Private commercial consultation</div>
+            </div>
+            <a class="btn btn-secondary" href="#contact">Discuss Enterprise</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>How we move a buyer from idea to launch</h2>
+            <p>The process below is designed to feel established and proven. It communicates structure, competence, and confidence without overclaiming anything you cannot evidence yet.</p>
+          </div>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Strategy and fit</h3>
+            <p>We define positioning, target audience, desired commercial model, and the right licensing/build scope for your business.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Structure and branding</h3>
+            <p>Your platform direction, visual language, launch messaging, and brand delivery are aligned for premium presentation.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Build and deployment</h3>
+            <p>We configure the front-end experience, conversion paths, licensing structure, and launch-ready environment around the agreed package.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">04</div>
+            <h3>Go live and grow</h3>
+            <p>You launch with a platform that looks credible from day one and is positioned to support monetisation, growth, and future expansion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Frequently asked questions</h2>
+            <p>Written to reduce hesitation and increase perceived professionalism. Adjust any detail later to match your exact final offer.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>What exactly am I licensing from StarDevLabs?</h3>
+          <p>You are licensing a commercially positioned AI platform build and deployment package configured around your selected scope. This can include front-end experience, monetisation pathways, platform presentation, launch structure, and supporting setup guidance depending on the package chosen.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is this a one-size-fits-all template?</h3>
+          <p>No. The positioning here is custom-first. Packages are framed around tailored deployment and commercial use, with branding, front-end experience, and business direction aligned to the operator and market focus.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How quickly can a platform be launched?</h3>
+          <p>Delivery timing depends on scope, assets, and custom requirements. The offer is intentionally positioned around accelerated launch compared with building from scratch, while still maintaining premium presentation and commercial structure.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can this support recurring revenue?</h3>
+          <p>Yes. The platform is sold around recurring revenue potential, including subscriptions, credits, premium unlocks, and engagement-led monetisation models that can be tailored to the business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to license and launch?</h2>
+            <p>Book a private strategy call to discuss your business, the right package for your launch, and how StarDevLabs can help you enter the market with a premium platform that feels established from day one.</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:hello@stardevlabs-ai.com?subject=StarDevLabs%20Platform%20Inquiry">hello@stardevlabs-ai.com</a>
+            <a class="btn btn-secondary" href="https://stardevlabs-ai.com" target="_blank" rel="noreferrer">stardevlabs-ai.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>StarDevLabs Limited</strong><br />
+        Custom AI Platforms. Engineered for Launch.
+      </div>
+      <div>© <span id="year"></span> StarDevLabs Limited. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
