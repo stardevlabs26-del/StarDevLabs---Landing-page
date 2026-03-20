@@ -4,22 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StarDevLabs | Custom AI Platforms. Engineered for Launch.</title>
-  <meta name="description" content="StarDevLabs designs and deploys custom AI companion platforms for founders, creators, and operators who want a premium product ready for launch." />
+  <meta name="description" content="StarDevLabs designs and deploys premium custom AI platforms for founders, creators, and operators ready to launch with a polished, monetisable product." />
   <meta name="theme-color" content="#08080b" />
   <style>
     :root {
       --bg: #08080b;
+      --bg-2: #0b0b11;
       --panel: rgba(16, 16, 24, 0.82);
+      --panel-2: rgba(20, 20, 32, 0.9);
       --text: #f5f7fb;
       --muted: #a9b0c1;
       --line: rgba(255,255,255,0.08);
       --blue: #00d4ff;
+      --blue-2: #8be9ff;
       --purple: #7b3fff;
       --pink: #f054b5;
       --success: #5eead4;
       --shadow: 0 24px 80px rgba(0,0,0,0.45);
-      --radius: 24px;
-      --max: 1220px;
+      --radius: 28px;
+      --radius-sm: 18px;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -33,6 +37,7 @@
         radial-gradient(circle at top right, rgba(0,212,255,0.16), transparent 24%),
         linear-gradient(180deg, #060609 0%, #0b0b11 45%, #08080b 100%);
       line-height: 1.55;
+      overflow-x: hidden;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -46,7 +51,7 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 40;
+      z-index: 100;
       backdrop-filter: blur(18px);
       background: rgba(8, 8, 11, 0.72);
       border-bottom: 1px solid var(--line);
@@ -56,7 +61,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 76px;
+      min-height: 78px;
       gap: 16px;
     }
 
@@ -80,6 +85,14 @@
       place-items: center;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 30px rgba(0,212,255,0.08);
       font-size: 1.1rem;
+      flex: 0 0 auto;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 500;
     }
 
     .nav-links {
@@ -88,6 +101,14 @@
       gap: 22px;
       color: var(--muted);
       font-size: 0.96rem;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
     }
 
     .nav-actions {
@@ -112,11 +133,15 @@
 
     .btn-primary {
       color: #081018;
-      background: linear-gradient(135deg, var(--blue), #8be9ff);
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
       box-shadow: 0 14px 30px rgba(0,212,255,0.24);
     }
 
-    .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.04); }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+      box-shadow: 0 18px 36px rgba(0,212,255,0.30);
+    }
 
     .btn-secondary {
       color: var(--text);
@@ -124,78 +149,51 @@
       border-color: rgba(255,255,255,0.1);
     }
 
-    .btn-secondary:hover { background: rgba(255,255,255,0.07); }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-2px);
+    }
 
     .hero {
-      padding: 72px 0 48px;
+      padding: 72px 0 46px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 26px;
       align-items: stretch;
     }
 
-    .hero-copy,
-    .hero-media,
-    .panel,
-    .card,
-    .price-card,
-    .step,
-    .faq-item,
-    .license-box,
-    .image-card,
-    .cta-banner {
+    .glass {
       background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
-      border-radius: 28px;
+      border-radius: var(--radius);
       overflow: hidden;
       position: relative;
     }
 
-    .hero-copy {
-      padding: 42px;
-      min-height: 640px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero-media {
-      min-height: 640px;
-      padding: 20px;
-      display: grid;
-      gap: 16px;
-      grid-template-rows: 1.2fr auto;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(123,63,255,0.18), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(0,212,255,0.16), transparent 28%),
-        rgba(255,255,255,0.02);
-    }
-
-    .hero-copy::before,
-    .hero-media::before,
-    .panel::before,
-    .card::before,
-    .price-card::before,
-    .step::before,
-    .faq-item::before,
-    .license-box::before,
-    .image-card::before,
-    .cta-banner::before {
+    .glass::before {
       content: "";
       position: absolute;
       inset: -2px;
-      background: linear-gradient(135deg, rgba(0,212,255,0.18), transparent 28%, transparent 72%, rgba(123,63,255,0.18));
+      background: linear-gradient(135deg, rgba(0,212,255,0.16), transparent 28%, transparent 72%, rgba(123,63,255,0.16));
       z-index: 0;
       pointer-events: none;
     }
 
-    .hero-copy > *, .hero-media > *, .panel > *, .card > *, .price-card > *, .step > *, .faq-item > *, .license-box > *, .image-card > *, .cta-banner > * {
+    .glass > * {
       position: relative;
       z-index: 1;
+    }
+
+    .hero-copy {
+      padding: 42px;
+      min-height: 680px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
@@ -219,7 +217,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.6rem, 5vw, 5rem);
+      font-size: clamp(2.7rem, 5vw, 5rem);
       line-height: 0.95;
       letter-spacing: -0.04em;
     }
@@ -232,37 +230,65 @@
     }
 
     .hero-subtitle {
-      font-size: 1.12rem;
+      font-size: 1.08rem;
       color: var(--muted);
-      margin: 22px 0 28px;
-      max-width: 720px;
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin: 28px 0;
-    }
-
-    .proof-card {
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .proof-card strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
+      margin: 22px 0 24px;
+      max-width: 760px;
     }
 
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 10px;
+      margin-top: 8px;
+    }
+
+    .hero-boost {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+      color: #e8eefc;
+      font-size: 0.98rem;
+    }
+
+    .hero-boost div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-boost div::before {
+      content: "⚡";
+      display: inline-block;
+      width: 22px;
+      text-align: center;
+      opacity: 0.95;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 26px 0 0;
+    }
+
+    .proof-card {
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .proof-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.10);
+    }
+
+    .proof-card strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
     }
 
     .trust-row {
@@ -279,26 +305,58 @@
       border-radius: 999px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.2s ease, background 0.2s ease;
     }
 
-    .video-placeholder {
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
-      min-height: 400px;
+    .trust-pill:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero-media {
+      min-height: 680px;
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+      grid-template-rows: 1.15fr auto;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)),
-        url('video-poster-placeholder.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: end;
-      position: relative;
+        radial-gradient(circle at 20% 0%, rgba(123,63,255,0.18), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(0,212,255,0.16), transparent 28%),
+        rgba(255,255,255,0.02);
     }
 
-    .video-placeholder::after {
+    .video-carousel {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 460px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0b0d14;
+      box-shadow: 0 0 0 1px rgba(0,212,255,0.08), 0 0 40px rgba(0,212,255,0.08);
+    }
+
+    .video-carousel video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.9s ease;
+      pointer-events: none;
+    }
+
+    .video-carousel video.active {
+      opacity: 1;
+    }
+
+    .video-carousel::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.65));
+      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.58));
+      pointer-events: none;
+      z-index: 1;
     }
 
     .play-badge {
@@ -315,13 +373,24 @@
     }
 
     .video-copy {
-      position: relative;
+      position: absolute;
       z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 0;
       padding: 22px;
     }
 
-    .video-copy h3 { margin: 0 0 8px; font-size: 1.25rem; }
-    .video-copy p { margin: 0; color: #d2d8e7; }
+    .video-copy h3 {
+      margin: 0 0 8px;
+      font-size: 1.24rem;
+    }
+
+    .video-copy p {
+      margin: 0;
+      color: #d2d8e7;
+      max-width: 560px;
+    }
 
     .mini-grid {
       display: grid;
@@ -335,6 +404,12 @@
       min-height: 126px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(0,212,255,0.10);
     }
 
     .mini-card .label {
@@ -370,7 +445,7 @@
 
     .section-header p {
       margin: 8px 0 0;
-      max-width: 720px;
+      max-width: 760px;
       color: var(--muted);
     }
 
@@ -380,18 +455,70 @@
       gap: 18px;
     }
 
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+    .card,
+    .price-card,
+    .step,
+    .faq-item,
+    .license-box,
+    .panel,
+    .image-carousel-shell,
+    .cta-banner {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card::before,
+    .price-card::before,
+    .step::before,
+    .faq-item::before,
+    .license-box::before,
+    .panel::before,
+    .image-carousel-shell::before,
+    .cta-banner::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.16), transparent 28%, transparent 72%, rgba(123,63,255,0.16));
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card > *,
+    .price-card > *,
+    .step > *,
+    .faq-item > *,
+    .license-box > *,
+    .panel > *,
+    .image-carousel-shell > *,
+    .cta-banner > * {
+      position: relative;
+      z-index: 1;
     }
 
     .card {
       padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
-    .card h3 { margin: 0 0 10px; font-size: 1.18rem; }
-    .card p { margin: 0; color: var(--muted); }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.14);
+      border-color: rgba(0,212,255,0.18);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .icon {
       width: 48px;
@@ -455,17 +582,93 @@
       margin-top: 2px;
     }
 
+    .quote-strip {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,63,255,0.14));
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e7fafe;
+    }
+
+    .showcase-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .image-carousel-shell {
+      padding: 18px;
+    }
+
+    .image-carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 6px;
+      scroll-behavior: smooth;
+    }
+
+    .image-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .image-carousel {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .image-card {
+      min-width: 300px;
+      max-width: 300px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      scroll-snap-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex: 0 0 auto;
+    }
+
+    .image-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.14);
+    }
+
     .image-card img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 420px;
       object-fit: cover;
       background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,63,255,0.15));
     }
 
     .image-card .caption {
-      padding: 16px;
+      padding: 14px 16px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+    }
+
+    .image-carousel-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.25s ease;
+      font-size: 1.2rem;
+    }
+
+    .carousel-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.08);
     }
 
     .pricing {
@@ -476,11 +679,18 @@
 
     .price-card {
       padding: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.14);
     }
 
     .price-card.featured {
       border-color: rgba(0,212,255,0.22);
       transform: translateY(-4px);
+      box-shadow: 0 24px 48px rgba(0,212,255,0.14);
     }
 
     .price-card .tag {
@@ -494,7 +704,11 @@
       margin-bottom: 14px;
     }
 
-    .price-card h3 { margin: 0 0 8px; font-size: 1.35rem; }
+    .price-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
     .price-card .price {
       font-size: 2.3rem;
       font-weight: 700;
@@ -508,7 +722,10 @@
       font-weight: 500;
     }
 
-    .price-card p { color: var(--muted); margin: 0 0 16px; }
+    .price-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
 
     .price-list {
       display: grid;
@@ -516,14 +733,6 @@
       margin: 18px 0 22px;
       color: #e5e9f4;
       font-size: 0.96rem;
-    }
-
-    .quote-strip {
-      padding: 20px 22px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,63,255,0.14));
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #e7fafe;
     }
 
     .process {
@@ -534,6 +743,12 @@
 
     .step {
       padding: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,212,255,0.14);
     }
 
     .step-number {
@@ -551,10 +766,22 @@
     .faq-item {
       padding: 22px 24px;
       margin-bottom: 14px;
+      transition: transform 0.3s ease;
     }
 
-    .faq-item h3 { margin: 0 0 8px; font-size: 1.05rem; }
-    .faq-item p { margin: 0; color: var(--muted); }
+    .faq-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .cta-banner {
       padding: 34px;
@@ -573,7 +800,30 @@
       line-height: 0.95;
     }
 
-    .cta-banner p { margin: 0; color: #ebf2ff; max-width: 760px; }
+    .cta-banner p {
+      margin: 0;
+      color: #ebf2ff;
+      max-width: 760px;
+    }
+
+    .sticky-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 120;
+      padding: 15px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #081018;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(0,212,255,0.32);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sticky-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(0,212,255,0.38);
+    }
 
     footer {
       padding: 36px 0 60px;
@@ -590,13 +840,23 @@
       padding-top: 24px;
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 1100px) {
       .hero-grid,
       .license-layout,
       .split,
       .pricing,
       .process,
-      .grid-4,
       .grid-3 {
         grid-template-columns: 1fr 1fr;
       }
@@ -604,6 +864,10 @@
       .hero-copy,
       .hero-media {
         min-height: auto;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -615,15 +879,25 @@
       .split,
       .pricing,
       .process,
-      .grid-4,
       .grid-3,
-      .hero-proof,
       .mini-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-copy {
         padding: 28px;
+      }
+
+      .image-card {
+        min-width: 84%;
+        max-width: 84%;
+      }
+
+      .sticky-cta {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        text-align: center;
       }
     }
   </style>
@@ -635,14 +909,15 @@
         <div class="brand-mark">✦</div>
         <div>
           <div>StarDevLabs</div>
-          <div style="font-size:0.78rem;color:#a9b0c1;font-weight:500;">Custom AI Platforms. Engineered for Launch.</div>
+          <small>Custom AI Platforms. Engineered for Launch.</small>
         </div>
       </a>
 
       <nav class="nav-links">
         <a href="#platform">Platform</a>
-        <a href="#licensing">Licensing</a>
         <a href="#results">Why Us</a>
+        <a href="#licensing">Licensing</a>
+        <a href="#showcase">Showcase</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -655,21 +930,27 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero fade-in" id="home">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="glass hero-copy">
           <div class="eyebrow"><span class="dot"></span> StarDevLabs Limited</div>
           <h1>
             <span class="gradient-text">Custom AI Platforms.</span><br />
             Engineered for Launch.
           </h1>
           <p class="hero-subtitle">
-            We design and deploy premium AI companion platforms for founders, operators, and digital brands that want to enter the market with a polished, monetisable product. From front-end experience to licensing, monetisation architecture, and launch readiness, we build platforms that look established from day one.
+            We design and deploy premium AI-ready platforms for founders, creators, and operators who want to launch faster with a polished, monetisable product that feels established from day one.
           </p>
 
           <div class="hero-cta">
             <a class="btn btn-primary" href="#contact">Start Your Platform</a>
             <a class="btn btn-secondary" href="#platform">Explore the Platform</a>
+          </div>
+
+          <div class="hero-boost">
+            <div>Platforms launching in days — not months</div>
+            <div>Built for monetisation from day one</div>
+            <div>Designed to convert, not just exist</div>
           </div>
 
           <div class="hero-proof">
@@ -695,14 +976,19 @@
           </div>
         </div>
 
-        <div class="hero-media">
-          <div class="video-placeholder">
-            <div class="play-badge">VIDEO PLACEHOLDER</div>
+        <div class="glass hero-media">
+          <div class="video-carousel" id="videoCarousel">
+            <video class="active" src="video-1.mp4" autoplay muted loop playsinline></video>
+            <video src="video-2.mp4" muted loop playsinline></video>
+            <video src="video-3.mp4" muted loop playsinline></video>
+
+            <div class="play-badge">LAUNCH REEL</div>
             <div class="video-copy">
-              <h3>Replace with your launch advert</h3>
-              <p>Use your poster image as <code>video-poster-placeholder.jpg</code> in the same folder as this file.</p>
+              <h3>Show buyers what premium looks like</h3>
+              <p>Your platform should feel credible, polished, and commercially ready before the first sales call even starts.</p>
             </div>
           </div>
+
           <div class="mini-grid">
             <div class="mini-card">
               <div class="label">Licensing Position</div>
@@ -719,7 +1005,7 @@
       </div>
     </section>
 
-    <section class="section" id="platform">
+    <section class="section fade-in" id="platform">
       <div class="container">
         <div class="section-header">
           <div>
@@ -763,7 +1049,7 @@
       </div>
     </section>
 
-    <section class="section" id="results">
+    <section class="section fade-in" id="results">
       <div class="container split">
         <div class="panel" style="padding:30px;">
           <div class="section-header" style="margin-bottom:10px;display:block;">
@@ -772,7 +1058,7 @@
           </div>
           <div class="checklist">
             <div class="check"><span>✓</span><span><strong>Market-aware builds:</strong> Designed around current AI engagement behavior, retention loops, and premium content monetisation.</span></div>
-            <div class="check"><span>✓</span><span><strong>Founder-ready positioning:</strong> Ideal for operators wanting to enter the AI companion category with a product that looks credible on launch.</span></div>
+            <div class="check"><span>✓</span><span><strong>Founder-ready positioning:</strong> Ideal for operators wanting to enter the AI category with a product that looks credible on launch.</span></div>
             <div class="check"><span>✓</span><span><strong>Premium perception:</strong> Dark, elegant interface systems that feel expensive, immersive, and built for conversion.</span></div>
             <div class="check"><span>✓</span><span><strong>Commercial flexibility:</strong> Scope can support single-brand deployment, licensing structure, internal control layers, and launch pathways.</span></div>
           </div>
@@ -786,18 +1072,18 @@
           <div style="height:18px;"></div>
           <div class="card" style="padding:20px;background:rgba(255,255,255,0.02);">
             <h3>Potential use cases</h3>
-            <p>Creator-led platforms, premium niche communities, paid AI entertainment products, subscription-first digital brands, engagement-focused member experiences, and commercially branded AI companion businesses.</p>
+            <p>Creator-led platforms, premium niche communities, paid AI entertainment products, subscription-first digital brands, engagement-focused member experiences, and commercially branded AI businesses.</p>
           </div>
           <div style="height:18px;"></div>
           <div class="card" style="padding:20px;background:rgba(255,255,255,0.02);">
             <h3>Revenue model opportunities</h3>
-            <p>Monthly subscriptions, credit packs, premium feature unlocks, exclusive content tiers, custom companion unlocks, story packs, and upsell pathways tied to engagement depth.</p>
+            <p>Monthly subscriptions, credit packs, premium feature unlocks, exclusive content tiers, story packs, and upsell pathways tied to engagement depth.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="licensing">
+    <section class="section fade-in" id="licensing">
       <div class="container">
         <div class="section-header">
           <div>
@@ -831,37 +1117,50 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section fade-in" id="showcase">
       <div class="container">
         <div class="section-header">
           <div>
-            <h2>Showcase placeholders</h2>
-            <p>Put these files in the same folder as <code>index.html</code>.</p>
+            <h2>Product showcase</h2>
+            <p>Swipe through your media library to show buyers the visual standard, tone, and presentation quality your licensed platform can achieve.</p>
           </div>
         </div>
 
-        <div class="grid-4">
-          <div class="image-card">
-            <img src="showcase-1.jpg" alt="Showcase placeholder 1" />
-            <div class="caption">Image Placeholder 01 — <code>showcase-1.jpg</code></div>
-          </div>
-          <div class="image-card">
-            <img src="showcase-2.jpg" alt="Showcase placeholder 2" />
-            <div class="caption">Image Placeholder 02 — <code>showcase-2.jpg</code></div>
-          </div>
-          <div class="image-card">
-            <img src="showcase-3.jpg" alt="Showcase placeholder 3" />
-            <div class="caption">Image Placeholder 03 — <code>showcase-3.jpg</code></div>
-          </div>
-          <div class="image-card">
-            <img src="showcase-4.jpg" alt="Showcase placeholder 4" />
-            <div class="caption">Image Placeholder 04 — <code>showcase-4.jpg</code></div>
+        <div class="showcase-wrap">
+          <div class="image-carousel-shell">
+            <div class="image-carousel" id="imageCarousel">
+              <div class="image-card">
+                <img src="img-1.jpg" alt="Showcase image 1" />
+                <div class="caption">Premium visual asset — img-1.jpg</div>
+              </div>
+              <div class="image-card">
+                <img src="img-2.jpg" alt="Showcase image 2" />
+                <div class="caption">Premium visual asset — img-2.jpg</div>
+              </div>
+              <div class="image-card">
+                <img src="img-3.jpg" alt="Showcase image 3" />
+                <div class="caption">Premium visual asset — img-3.jpg</div>
+              </div>
+              <div class="image-card">
+                <img src="img-4.jpg" alt="Showcase image 4" />
+                <div class="caption">Premium visual asset — img-4.jpg</div>
+              </div>
+              <div class="image-card">
+                <img src="img-5.jpg" alt="Showcase image 5" />
+                <div class="caption">Premium visual asset — img-5.jpg</div>
+              </div>
+            </div>
+
+            <div class="image-carousel-actions">
+              <button class="carousel-btn" id="prevBtn" aria-label="Previous">‹</button>
+              <button class="carousel-btn" id="nextBtn" aria-label="Next">›</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="pricing">
+    <section class="section fade-in" id="pricing">
       <div class="container">
         <div class="section-header">
           <div>
@@ -916,7 +1215,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section fade-in">
       <div class="container">
         <div class="section-header">
           <div>
@@ -950,7 +1249,7 @@
       </div>
     </section>
 
-    <section class="section" id="faq">
+    <section class="section fade-in" id="faq">
       <div class="container">
         <div class="section-header">
           <div>
@@ -981,7 +1280,7 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section fade-in" id="contact">
       <div class="container">
         <div class="cta-banner">
           <div>
@@ -997,6 +1296,8 @@
     </section>
   </main>
 
+  <a class="sticky-cta" href="#contact">Launch Your AI Platform Today →</a>
+
   <footer>
     <div class="container footer-grid">
       <div>
@@ -1009,6 +1310,43 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+    faders.forEach((el) => observer.observe(el));
+
+    const videos = document.querySelectorAll("#videoCarousel video");
+    let videoIndex = 0;
+
+    function switchVideo() {
+      videos.forEach((video) => {
+        video.classList.remove("active");
+        video.pause();
+      });
+
+      videos[videoIndex].classList.add("active");
+      videos[videoIndex].play().catch(() => {});
+      videoIndex = (videoIndex + 1) % videos.length;
+    }
+
+    switchVideo();
+    setInterval(switchVideo, 4000);
+
+    const imageCarousel = document.getElementById("imageCarousel");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    prevBtn.addEventListener("click", () => {
+      imageCarousel.scrollBy({ left: -320, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      imageCarousel.scrollBy({ left: 320, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
